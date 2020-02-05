@@ -4,7 +4,7 @@ public class HomePage {
 
     String A;
     String B;
-    String c;
+    String D;
 
 
     //HomePage class checking
