@@ -25,7 +25,6 @@
     </properties>
     <!--  pom means Project Object Model : Heart of this project -->
 
-    <dependencyManagement>
 
 
         <dependencies>
@@ -105,7 +104,6 @@
 
         </dependencies>
 
-    </dependencyManagement>
 
 
     <build>
