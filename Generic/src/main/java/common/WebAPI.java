@@ -130,7 +130,7 @@ public class WebAPI {
             if (OS.equalsIgnoreCase("OS X")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "..chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdshu\\Downloads\\Team-1_WebAutomationFramework\\Generic\\BrowserDriver\\Windows\\chromedriver.exe");
             }
             driver = new ChromeDriver();
         }
@@ -140,7 +140,7 @@ public class WebAPI {
             if (OS.equalsIgnoreCase("OS X")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdshu\\Downloads\\Team-1_WebAutomationFramework\\Generic\\BrowserDriver\\Windows\\chromedriver.exe");
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
