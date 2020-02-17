@@ -1,5 +1,6 @@
 package common;
 
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
@@ -15,6 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -108,7 +110,7 @@ public class WebAPI {
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("OS X") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
-                              String browserVersion, @Optional("https://www.cnn.com") String url) throws IOException {
+                              String browserVersion, @Optional("https://www.airbnb.com/") String url) throws IOException {
         //System.setProperty("webdriver.chrome.driver", "/Users/peoplentech/eclipse-workspace-March2018/SeleniumProject1/driver/chromedriver");
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
@@ -122,13 +124,13 @@ public class WebAPI {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
-    public WebDriver getLocalDriver(   @Optional("mac")    String OS, String browserName) {
+    public WebDriver getLocalDriver(   @Optional("windows")    String OS, String browserName) {
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/Windows/chromedriver.exe");
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdshu\\Downloads\\Team-1_WebAutomationFramework\\Generic\\BrowserDriver\\Windows\\chromedriver.exe");
             }
@@ -138,9 +140,9 @@ public class WebAPI {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/Windows/chromedriver.exe");
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\mdshu\\Downloads\\Team-1_WebAutomationFramework\\Generic\\BrowserDriver\\Windows\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/Windows/chromedriver.exe");
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
@@ -251,7 +253,7 @@ public class WebAPI {
         driver.findElement(By.id(locator)).clear();
     }
 
-    public void navigateBack() {
+    public static void navigateBack() {
         driver.navigate().back();
     }
 
@@ -415,7 +417,7 @@ public class WebAPI {
         Thread.sleep(sec * 1000);
     }
 
-    public void mouseHoverByCSS(String locator) {
+    public static void mouseHoverByCSS(String locator) {
         try {
             WebElement element = driver.findElement(By.cssSelector(locator));
             Actions action = new Actions(driver);
@@ -430,11 +432,12 @@ public class WebAPI {
 
     }
 
-    public void mouseHoverByXpath(String locator) {
+    public  static void mouseHoverByXpath(String locator) {
         try {
             WebElement element = driver.findElement(By.xpath(locator));
             Actions action = new Actions(driver);
             Actions hover = action.moveToElement(element);
+            hover.perform();
         } catch (Exception ex) {
             System.out.println("First attempt has been done, This is second try");
             WebElement element = driver.findElement(By.xpath(locator));
@@ -461,7 +464,7 @@ public class WebAPI {
         driver.switchTo().frame(element);
     }
 
-    public void goBackToHomeWindow() {
+    public static void goBackToHomeWindow() {
         driver.switchTo().defaultContent();
     }
 
@@ -471,7 +474,7 @@ public class WebAPI {
     }
 
     //Taking Screen shots
-    public void takeScreenShot() throws IOException {
+    public static void takeScreenShot() throws IOException {
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         //FileUtils.copyFile(file, new File("screenShots.png"));
     }
@@ -585,6 +588,27 @@ public class WebAPI {
     }
 
 
+    public static void scrollUpDown(int scrollValue){
+        JavascriptExecutor scroll=(JavascriptExecutor) driver;
+        scroll.executeScript("window.scrollBy(0,"+scrollValue+")");
+
+    }
+    public static void scrollToFooter(){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+
+    //((JavascriptExecutor) driver).executeScript("window.open('about:blank','_blank');");
+
+    public static void assertCheck(String actual,String expected){
+            Assert.assertEquals(actual,expected);
+            System.out.println("Test Passed");
+    }
+
+    public static void scrollToWebElement(String path){
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",
+                driver.findElement(By.xpath(path)));
+    }
 
 
 

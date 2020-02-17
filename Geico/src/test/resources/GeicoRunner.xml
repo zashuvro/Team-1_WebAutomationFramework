@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="AirBnB Automation Script" parallel="false">
+<suite name="Geico Automation Script" parallel="false">
 
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
@@ -12,15 +12,11 @@
     <!--<parameter name="os_version" value="Sierra"/>-->
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="79"/>
-    <parameter name="url" value="https://www.airbnb.com/"/>
-    <test name="AirBnB Home">
+    <parameter name="url" value="https://www.geico.com/"/>
+    <test name="Geico Home">
         <classes>
-            <class name="testhomepage.TestHomePageLanguageTab"/>
-            <class name="testhomepage.TestHomePageUSDTab"/>
             <class name="testhomepage.TestHomePage"/>
-            <class name="testhomepage.TestHomePageSignUpFrame"/>
-            <class name="testhomepage.TestHomePageSearchSection"/>
-            <class name="testhomepage.TestHomePageHelpTab"/>
+
         </classes>
 
     </test>
@@ -76,19 +72,3 @@
 
 
 </suite>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -15,8 +15,12 @@
     <parameter name="url" value="https://www.airbnb.com/"/>
     <test name="AirBnB Home">
         <classes>
+            <class name="testhomepage.TestHomePageLanguageTab"/>
+            <class name="testhomepage.TestHomePageUSDTab"/>
             <class name="testhomepage.TestHomePage"/>
-
+            <class name="testhomepage.TestHomePageSignUpFrame"/>
+            <class name="testhomepage.TestHomePageSearchSection"/>
+            <class name="testhomepage.TestHomePageHelpTab"/>
         </classes>
 
     </test>

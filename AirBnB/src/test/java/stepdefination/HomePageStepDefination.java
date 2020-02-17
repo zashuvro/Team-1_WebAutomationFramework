@@ -1,33 +1,105 @@
 package stepdefination;
 
 
-import homepage.pageobject.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import testhomepage.TestHomePage;
+import testhomepage.TestHomePageLanguageTab;
 
 public class HomePageStepDefination extends TestHomePage {
 
-    @Given("I am at AirBnB HomePage")
-    public void i_am_at_AirBnB_HomePage() {
+
+    @Given("I am validating HomePage")
+    public void i_am_validating_HomePage() {
         // Write code here that turns the phrase above into concrete actions
-        getLocalDriver("windows","chrome");
-        driver.get("https://www.airbnb.com/");
-        driver.manage().window().maximize();
+        testValidateHomePage();
     }
 
-    @Given("I click On EnglishUs Button")
-    public void i_click_On_EnglishUs_Button() {
+    @Given("I am validating HomePage Footer")
+    public void i_am_validating_HomePage_Footer() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-        driver.findElement(By.xpath(xPathEnglishUsButton)).click();
+    testValidateFooter();
     }
 
-    @Then("I Select EnglishUs By click on it")
-    public void i_Select_EnglishUs_By_click_on_it() {
+    @Given("I am validating Terms Privacy")
+    public void i_am_validating_Terms_Privacy() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-           driver.findElement(By.xpath(xPathSelectEnglish)).click();
+    testValidateTermsPrivacy();
     }
+
+    @Given("I am Clicking NewsButton")
+    public void i_am_Clicking_NewsButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testNewsButton();
+    }
+
+    @Given("I am Clicking PoliciesButton")
+    public void i_am_Clicking_PoliciesButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testPoliciesButton();
+    }
+
+    @Given("I am Clicking DiversityBelongingButton")
+    public void i_am_Clicking_DiversityBelongingButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testDiversityBelongingButton();
+    }
+    @Given("I am Clicking AccessibilityButton")
+    public void i_am_Clicking_AccessibilityButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testAccessibilityButton();
+    }
+    @Given("I am Clicking TrustSafetyButton")
+    public void i_am_Clicking_TrustSafetyButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testTrustSafetyButton();
+    }
+    @Given("I am Clicking TravelCreditButton")
+    public void i_am_Clicking_TravelCreditButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testTravelCreditButton();
+    }
+    @Given("I am Clicking GiftCards Button")
+    public void i_am_Clicking_GiftCards_Button() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testGiftCardsButton();
+    }
+    @Given("I am Clicking FaceBook Button")
+    public void i_am_Clicking_FaceBook_Button() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testFaceBookButton();
+    }
+    @Given("I am Clicking TwitterButton")
+    public void i_am_Clicking_TwitterButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testTwitterButton();
+    }
+
+    @Given("I am Clicking InstagramButton")
+    public void i_am_Clicking_InstagramButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testInstagramButton();
+    }
+
+    @Given("I am Clicking HelpButton")
+    public void i_am_Clicking_HelpButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testHelpButton();
+    }
+
+    @Given("I am Clicking NeighborhoodSupportButton")
+    public void i_am_Clicking_NeighborhoodSupportButton() throws InterruptedException {
+        // Write code here that turns the phrase above into concrete actions
+    testNeighborhoodSupportButton();
+    }
+
+
+
+
+
+
+
 
 
 }
