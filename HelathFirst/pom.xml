@@ -11,5 +11,13 @@
 
     <artifactId>HelathFirst</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.piit</groupId>
+            <artifactId>Generic</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
