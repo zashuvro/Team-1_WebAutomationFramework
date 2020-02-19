@@ -1,0 +1,6 @@
+contactpage\webelement\ContactPageWebelement.class
+contactpage\pageobject\ContactPage.class
+homepage\pageobject\HomePagePlans.class
+homepage\pageobject\HomePage.class
+homepage\webelement\HomePagePlansWebelement.class
+homepage\webelement\HomePageWebElement.class

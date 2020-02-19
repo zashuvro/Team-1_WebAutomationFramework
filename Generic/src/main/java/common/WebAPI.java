@@ -110,7 +110,7 @@ public class WebAPI {
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("OS X") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
-                              String browserVersion, @Optional("https://www.airbnb.com/") String url) throws IOException {
+                              String browserVersion, @Optional("https://www.google.com/") String url) throws IOException {
         //System.setProperty("webdriver.chrome.driver", "/Users/peoplentech/eclipse-workspace-March2018/SeleniumProject1/driver/chromedriver");
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
@@ -601,6 +601,10 @@ public class WebAPI {
     //((JavascriptExecutor) driver).executeScript("window.open('about:blank','_blank');");
 
     public static void assertCheck(String actual,String expected){
+            Assert.assertEquals(actual,expected);
+            System.out.println("Test Passed");
+    }
+    public static void assertValidate(String actual,String expected){
             Assert.assertEquals(actual,expected);
             System.out.println("Test Passed");
     }

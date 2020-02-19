@@ -10,13 +10,13 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Amazon</module>
-        <module>Generic</module>
         <module>CNN</module>
         <module>T-Mobile</module>
         <module>Geico</module>
         <module>HelathFirst</module>
         <module>Amex</module>
         <module>AirBnB</module>
+        <module>Generic</module>
         <module>Emirates</module>
     </modules>
     <properties>
@@ -147,17 +147,19 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>3.0.0-M3</version>-->
-<!--                <configuration>-->
-<!--                    <suiteXmlFiles>-->
-<!--&lt;!&ndash;                         <suiteXmlFiles>target/test-classes/AirBnBTestRunner.xml</suiteXmlFiles>&ndash;&gt;-->
-<!--                    </suiteXmlFiles>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            &lt;!&ndash; Reporting &ndash;&gt;-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <includes>
+                        <include>AirBnBTestRunner.xml</include>
+                        <include>AmazonTestRunner.xml</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Reporting -->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -170,10 +172,10 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>BDDWebAutomationFramework</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>
-                            <!--<parallel>dataproviderthreadcount</parallel>-->
+<!--                            <projectName>BDDWebAutomationFramework</projectName>-->
+<!--                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>-->
+<!--                            <cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>-->
+<!--                            &lt;!&ndash;<parallel>dataproviderthreadcount</parallel>&ndash;&gt;-->
                             <!--&lt;!&ndash; 	<parallel>classes</parallel> &ndash;&gt;-->
                             <!--<threadCount>2</threadCount>-->
                         </configuration>

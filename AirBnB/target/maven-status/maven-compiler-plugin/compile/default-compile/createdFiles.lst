@@ -1,0 +1,9 @@
+homepage\pageobject\HomePageLanguageTab.class
+homepage\pageobject\HomePageHelpTab.class
+homepage\pageobject\HomePage.class
+homepage\pageobject\HomePageUSDTab.class
+homepage\webelement\HomePageWebElement.class
+homepage\pageobject\HomepageSearchSection.class
+hostahomepage\webelements\HostAHomePageWebElements.class
+hostahomepage\pageobject\HostAHomePage.class
+homepage\pageobject\HomePageSignUpFrame.class
