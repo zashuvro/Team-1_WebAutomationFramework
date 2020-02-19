@@ -94,12 +94,4 @@ public class HomePageStepDefination extends TestHomePage {
     testNeighborhoodSupportButton();
     }
 
-
-
-
-
-
-
-
-
 }

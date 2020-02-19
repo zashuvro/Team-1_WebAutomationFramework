@@ -1,2 +1,4 @@
+homepage\pageobject\HomePageFooterClass.class
+homepage\webelement\HomePageFooterWebElement.class
 homepage\pageobject\HomePage.class
 homepage\webelement\HomePageWebElement.class

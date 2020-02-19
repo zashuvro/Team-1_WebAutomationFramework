@@ -118,17 +118,17 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M3</version>
-                <configuration>
-                    <suiteXmlFiles>
-                        <!--  <suiteXmlFiles>target/test-classes/AmazonTestRunner.xml</suiteXmlFiles>  -->
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
-            <!-- Reporting -->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>3.0.0-M3</version>-->
+<!--                <configuration>-->
+<!--                    <suiteXmlFiles>-->
+<!--                          <suiteXmlFiles>src/test/resources/AirBnBTestRunner.xml</suiteXmlFiles>-->
+<!--                    </suiteXmlFiles>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            &lt;!&ndash; Reporting &ndash;&gt;-->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
